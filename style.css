@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: white;
+  overflow: hidden;
+}
+
+/* BACKGROUND */
+canvas#stars {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+/* FLOATING HEARTS */
+#hearts span {
+  position: fixed;
+  bottom: -20px;
+  color: rgba(255, 192, 203, 0.6);
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* HALAMAN AWAL */
+.container {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.message {
+  max-width: 340px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+button {
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: none;
+  background: #ff8fb1;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.popup.show {
+  display: flex;
+}
+
+/* AMPL0P IMUT */
+.envelope {
+  width: 420px;
+  height: 70vh;
+  background: linear-gradient(135deg, #ffd6e8, #ffc0cb);
+  border-radius: 24px;
+  transform: scale(0.85) translateY(40px);
+  opacity: 0;
+  transition: 0.5s ease;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.envelope.open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* DEKOR LUCU */
+.decor {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.decor-1 { top: 12px; left: 16px; }
+.decor-2 { top: 12px; right: 16px; }
+.decor-3 { bottom: 12px; left: 50%; transform: translateX(-50%); }
+
+.letter {
+  background: white;
+  height: calc(100% - 24px);
+  margin: 12px;
+  padding: 18px;
+  border-radius: 16px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.letter h2 {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.letter-content {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding-right: 6px;
+}
+
+/* ISI PESAN */
+#typedMessage {
+  white-space: pre-line;
+}
+
+#typedMessage p {
+  margin-bottom: 16px;
+}
+
+#closeLetter {
+  margin-top: 10px;
+  background: #ff8fb1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .envelope {
+    width: 90vw;
+    height: 65vh;
+  }
+}
