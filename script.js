@@ -77,6 +77,7 @@ const typedMessage = document.getElementById("typedMessage");
 
 const paragraphs = [
   "Selamat ulang tahun yaaa",
+  "Walaupun bukan hari ini, aku takut kelupaan nantinya",
 
   "Semoga di umur yang sekarang,\nkamu selalu diberi kesehatan,\nketenangan, dan hal-hal baik\nyang datang tepat pada waktunya.",
 
