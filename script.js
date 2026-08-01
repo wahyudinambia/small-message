@@ -1,5 +1,5 @@
 /* ===== TYPEWRITER JUDUL ===== */
-const texts = ["Halo Diba 👋", "Happy Birthday 🎉"];
+const texts = ["Halo Diba 👋"];
 const loopText = document.getElementById("loopText");
 
 let tIndex = 0;
